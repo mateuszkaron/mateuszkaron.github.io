@@ -3,12 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+
+    <title>Mateusz Karoń</title>
+
 </head>
 <body>
-    <h1>Hello World</h1>
-    <h1>Hello World</h1>
-    aha
-    xd
+    <div id="scrollable">
+    <div class="content">
+        <div class="main">
+            <div class="main-left">
+                <div class="main-left-top">
+                    <h1>Mateusz<br>Karoń</h1>
+                </div>
+                <div class="main-left-middle animated-text">
+                    <h3 id="text">FullStack<br>Developer</h3>
+                </div>
+                <div class="main-left-bottom">
+                    <ul class="vertical-menu">
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="main-right-center">
+                    <div class="main-right-img">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="projects">
+
+        </div>
+
+        <div id="about" class="about">
+
+        </div>
+
+        <div id="contact" class="contact">
+
+        </div>
+    </div> 
+</div> 
 </body>
 </html>
+
+<script>
+
+const scrollable = document.getElementById('scrollable');
+
+    scrollable.addEventListener('wheel', function(event) {
+        
+        event.preventDefault();
+
+        const delta = event.deltaY;
+
+        const scrollAmount = scrollable.clientWidth; 
+
+        if (delta > 0) {
+            scrollable.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        } else {
+            scrollable.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+
+    window.onload = function() {
+        const textElement = document.getElementById('text');
+        
+        // Miganie
+        textElement.style.animation = 'blink 1s infinite'; // Włączenie animacji migania
+
+        let blinkCount = 3;
+        
+        setTimeout(() => {
+            textElement.style.animation = 'none'; // Zatrzymanie migania
+            textElement.style.color = '#ffc200'; // Zmiana koloru tekstu na jasny
+            textElement.style.textShadow = '0 0 20px rgba(255,237,179, 0.8)'; // Dodanie jasnego cienia
+        }, 2000); // Czas trwania migania (w milisekundach)
+    };
+
+</script>
+
+
+
+<style> 
+
+    html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    #scrollable {
+        overflow: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+    }
+
+    .animated-text {
+            font-size: 3rem; /* Rozmiar czcionki */
+            font-weight: bold; /* Pogrubienie */
+            color: #333; /* Początkowy kolor tekstu (ciemny) */
+            opacity: 1; /* Pełna przezroczystość */
+            transition: text-shadow 0.5s ease; /* Płynne przejście dla cienia */
+    }
+
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1; /* Włączony tekst */
+        }
+        50% {
+            opacity: 0; /* Migotanie */
+        }
+    }
+
+    .content {
+        width: 400vw;
+        height: 100vh;
+        display: flex;
+    }
+
+    .main{
+        height: 100vh;
+        width: 100vw;
+        background-color: #4A5956;
+    }
+    
+    .main-left{
+        float: left;
+        height: 100vh;
+        width: 60%;
+    }
+
+    .main-left-top{
+        height: 20%;
+    }
+
+    .main-left-top h1{
+        font-size: 38px;
+        margin-left: 20px;
+        color: #DCEED1;
+        font-weight: 300;
+    }
+
+    .main-left-middle{
+        height: 40%;
+        justify-items: center;
+        text-align: center;
+    }
+    .main-left-middle h3{
+        margin: 20px auto;
+        color: #DCEED1;
+        padding: 0;
+        font-size: 80px;
+    }
+
+    .main-left-bottom{
+        margin: -60px auto;
+        height: 40%;
+    }
+
+    .main-right{
+        display: flex;
+        float: left;
+        height: 100vh;
+        width: 40%;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .main-right-center{
+        display: flex;
+        justify-content: center;
+        height: 60%;
+        width: 80%;
+        text-align: center;
+        margin: 0px auto;
+        padding: 0px auto;
+    }
+    
+    .main-right-img{
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: 0px 0px 20px #010000;
+        background-image: url(code.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .vertical-menu {
+        max-width: 60%; 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0 auto;
+    }
+
+    .vertical-menu li {
+        padding: 10px; 
+        margin-bottom: 5px; 
+        font-size: 78px;
+        font-weight: 1000;
+        text-align: center; 
+    }
+
+    .vertical-menu li a {
+        text-decoration: none;
+        color: #C3D7BE; 
+        display: block;
+    }
+
+    .vertical-menu li a:hover {
+        color: #7A918D;
+    }
+
+    .projects{
+        height: 100vh;
+        width: 100vw;
+        background-color: red;
+    }
+
+    .about{
+        height: 100vh;
+        width: 100vw;
+        background-color: green;
+    }
+
+    .contact{
+        height: 100vh;
+        width: 100vw;
+        background-color: fuchsia;
+    }
+
+</style>
