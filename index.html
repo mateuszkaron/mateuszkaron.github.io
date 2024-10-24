@@ -76,21 +76,59 @@ const scrollable = document.getElementById('scrollable');
         }
     });
 
+    let startX;
+    let scrollLeft;
+
+    scrollable.addEventListener('touchstart', function(event) {
+        startX = event.touches[0].pageX - scrollable.offsetLeft;
+        scrollLeft = scrollable.scrollLeft;
+    });
+
+    scrollable.addEventListener('touchmove', function(event) {
+        event.preventDefault(); // Zablokuj domyślne przewijanie
+        const x = event.touches[0].pageX - scrollable.offsetLeft;
+        const walk = (x - startX) * 1.5; // Prędkość przewijania
+        scrollable.scrollLeft = scrollLeft - walk;
+    });
 
     window.onload = function() {
         const textElement = document.getElementById('text');
         
         // Miganie
-        textElement.style.animation = 'blink 1s infinite'; // Włączenie animacji migania
+        let blinkCount = 4;
 
-        let blinkCount = 3;
-        
-        setTimeout(() => {
-            textElement.style.animation = 'none'; // Zatrzymanie migania
-            textElement.style.color = '#ffc200'; // Zmiana koloru tekstu na jasny
-            textElement.style.textShadow = '0 0 20px rgba(255,237,179, 0.8)'; // Dodanie jasnego cienia
-        }, 2500); // Czas trwania migania (w milisekundach)
-    };
+        function getRandomDuration() {
+        return parseFloat((Math.random() * (0.3 - 0.1) + 0.1).toFixed(1)); // Losuje czas trwania między 0.1s a 0.3s
+    }
+
+    // Funkcja migania
+    function fastBlink() {
+        if (blinkCount > 0) {
+            const duration = getRandomDuration(); // Losuj nowy czas trwania
+            textElement.style.animation = `blink ${duration}s`;
+            textElement.style.opacity = '0';
+
+            // Po zakończeniu mignięcia uruchom ponownie z losowym czasem
+            setTimeout(() => {
+                blinkCount--; // Zmniejsz licznik mignięć
+                fastBlink(); // Ponownie wywołaj funkcję
+            }, duration * 1000); // Czekaj na zakończenie aktualnego mignięcia
+        } else {
+            stopBlink(); // Zatrzymaj miganie po 4 mignięciach
+        }
+    }
+
+    // Funkcja zatrzymująca miganie i "zapalenie" tekstu
+    function stopBlink() {
+        textElement.style.animation = 'none'; // Zatrzymaj animację
+        textElement.style.color = '#ffe286'; // Zmień kolor na jasny
+        textElement.style.textShadow = '0 0 30px rgba(255,237,179, 0.8)'; // Dodaj cień
+        textElement.style.opacity = '1'; // Upewnij się, że tekst jest widoczny
+    }
+
+    // Rozpocznij miganie
+    fastBlink(); // Rozpocznij pierwsze mignięcie
+};
 
 </script>
 
@@ -123,7 +161,6 @@ const scrollable = document.getElementById('scrollable');
     .animated-text {
             font-size: 3rem; /* Rozmiar czcionki */
             font-weight: bold; /* Pogrubienie */
-            color: #333; /* Początkowy kolor tekstu (ciemny) */
             opacity: 1; /* Pełna przezroczystość */
             transition: text-shadow 0.5s ease; /* Płynne przejście dla cienia */
     }
@@ -131,6 +168,8 @@ const scrollable = document.getElementById('scrollable');
     @keyframes blink {
         0%, 100% {
             opacity: 1; /* Włączony tekst */
+            text-shadow: 0 0 50px rgba(255,237,179, 0.8);
+            color: #ffe286;
         }
         50% {
             opacity: 0; /* Migotanie */
@@ -151,7 +190,7 @@ const scrollable = document.getElementById('scrollable');
     
     .main-left{
         float: left;
-        height: 100vh;
+        height: 100vh; 
         width: 60%;
     }
 
@@ -175,10 +214,13 @@ const scrollable = document.getElementById('scrollable');
         margin: 20px auto;
         color: #DCEED1;
         padding: 0;
+        text-align: center;
         font-size: 80px;
     }
 
     .main-left-bottom{
+        justify-items: center;
+        text-align: center;
         margin: -60px auto;
         height: 40%;
     }
@@ -229,15 +271,16 @@ const scrollable = document.getElementById('scrollable');
         font-weight: 1000;
         text-align: center; 
     }
-
     .vertical-menu li a {
         text-decoration: none;
         color: #C3D7BE; 
         display: block;
     }
-
+    
     .vertical-menu li a:hover {
-        color: #7A918D;
+        text-shadow: 0 0 50px rgba(255,237,179, 0.8);
+        color: #ffe286;
+        transition: text-shadow 0.5s ease;
     }
 
     .projects{
@@ -258,4 +301,19 @@ const scrollable = document.getElementById('scrollable');
         background-color: fuchsia;
     }
 
+    @media (max-width: 768px) {
+    .main-right{
+        display: none; /* Ukryj element na urządzeniach mobilnych */
+    }
+    .main-left{
+        width: 100%;
+    }
+    .vertical-menu li{
+        font-size: 48px;
+        padding: auto;
+    }
+    .main-left-middle h3{
+        font-size: 58px;
+    }
+    }
 </style>
