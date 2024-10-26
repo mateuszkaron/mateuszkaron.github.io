@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Mateusz Karoń">
 
     <title>Mateusz Karoń</title>
 
@@ -44,7 +45,18 @@
         </div>
 
         <div id="contact" class="contact">
-
+            <h2 class="floating-text">
+                <span class="char1">C</span>
+                <span class="char2">O</span>
+                <span class="char3">N</span>
+                <span class="char4">T</span>
+                <span class="char5">A</span>
+                <span class="char6">C</span>
+                <span class="char7">T</span>
+                <span class="char8">&nbsp</span>
+                <span class="char9">M</span>
+                <span class="char10">E</span>
+              </h2>
         </div>
     </div> 
 </div> 
@@ -59,7 +71,7 @@ const scrollable = document.getElementById('scrollable');
         
         event.preventDefault();
 
-        const delta = event.deltaY;
+        const delta = event.deltaY || event.deltaX;
 
         const scrollAmount = scrollable.clientWidth; 
 
@@ -185,7 +197,7 @@ const scrollable = document.getElementById('scrollable');
     .main{
         height: 100vh;
         width: 100vw;
-        background-color: #4A5956;
+        background-color: #4A5956 /*#1B1B1B*/;
     }
     
     .main-left{
@@ -199,7 +211,7 @@ const scrollable = document.getElementById('scrollable');
     }
 
     .main-left-top h1{
-        font-size: 38px;
+        font-size: 2rem;
         margin-left: 20px;
         color: #DCEED1;
         font-weight: 300;
@@ -238,7 +250,7 @@ const scrollable = document.getElementById('scrollable');
     .main-right-center{
         display: flex;
         justify-content: center;
-        height: 60%;
+        height: 80%;
         width: 80%;
         text-align: center;
         margin: 0px auto;
@@ -267,7 +279,7 @@ const scrollable = document.getElementById('scrollable');
     .vertical-menu li {
         padding: 10px; 
         margin-bottom: 5px; 
-        font-size: 78px;
+        font-size: 3rem;
         font-weight: 1000;
         text-align: center; 
     }
@@ -286,7 +298,7 @@ const scrollable = document.getElementById('scrollable');
     .projects{
         height: 100vh;
         width: 100vw;
-        background-color: red;
+        background-color: #8B5E3C;
     }
 
     .about{
@@ -298,8 +310,75 @@ const scrollable = document.getElementById('scrollable');
     .contact{
         height: 100vh;
         width: 100vw;
-        background-color: fuchsia;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        background-color: #C4B59E;
     }
+
+    .floating-text {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: bold;
+        color: #C4B59E;
+        line-height: 1;
+    }
+
+.floating-text span {
+  display: inline-block; /* Pozwól na swobodne przesuwanie liter */
+  position: relative; /* Umożliwia użycie top */
+}
+
+/* Definiowanie animacji */
+.char1 { animation: wave 1s infinite ease-in-out; }
+.char2 { animation: wave 1s infinite ease-in-out 0.1s; }
+.char3 { animation: wave 1s infinite ease-in-out 0.2s; }
+.char4 { animation: wave 1s infinite ease-in-out 0.3s; }
+.char5 { animation: wave 1s infinite ease-in-out 0.4s; }
+.char6 { animation: wave 1s infinite ease-in-out 0.5s; }
+.char7 { animation: wave 1s infinite ease-in-out 0.6s; }
+.char8 { animation: wave 1s infinite ease-in-out 0.7s; } /* dla spacji */
+.char9 { animation: wave 1s infinite ease-in-out 0.8s; }
+.char10 { animation: wave 1s infinite ease-in-out 0.9s; }
+
+/* Definiowanie animacji dla liter */
+@keyframes wave {
+  0%, 100% {
+    top: -1px; 
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      -1px 1px black;
+  }
+  25% {
+    top: -5px; /* Pozycja w szczycie fali */
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      -3px 5px black; /* Cień zmienia się w trakcie animacji */
+  }
+  50% {
+    top: -10px;
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      -6px 10px black;
+  }
+  75% {
+    top: -5px;
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      -3px 5px black;
+  }
+}
 
     @media (max-width: 768px) {
     .main-right{
