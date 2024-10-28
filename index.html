@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Mateusz Karoń">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Oi&display=swap" rel="stylesheet">
 
     <title>Mateusz Karoń</title>
 
@@ -13,28 +14,27 @@
     <div id="scrollable">
     <div class="content">
         <div class="main">
-            <div class="main-left">
-                <div class="main-left-top">
-                    <h1>Mateusz<br>Karoń</h1>
+                <div class="main-top">
+                    <h1>Mateusz Karoń</h1>
+                    <h2 class="oi">FullStack<br>Developer</h2>
                 </div>
-                <div class="main-left-middle animated-text">
-                    <h3 id="text">FullStack<br>Developer</h3>
+                <div class="main-checkered"  id="checkerboard">
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                 </div>
-                <div class="main-left-bottom">
-                    <ul class="vertical-menu">
+                <div class="main-bottom">
+                    <ul class="vertical-menu oi">
                         <li><a href="#projects">PROJECTS</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="main-right">
-                <div class="main-right-center">
-                    <div class="main-right-img">
-                        
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div id="projects" class="projects">
@@ -53,11 +53,12 @@
         </div>
 
         <div id="about" class="about">
+            <h2>About me</h2>
 
         </div>
 
         <div id="contact" class="contact">
-            <h2 class="floating-text">
+            <h2 class="floating-text oi">
                 <span class="char1">C</span>
                 <span class="char2">O</span>
                 <span class="char3">N</span>
@@ -128,51 +129,12 @@ const scrollable = document.getElementById('scrollable');
         scrollable.scrollLeft = scrollLeft - walk;
     });
 
-    window.onload = function() {
-        const textElement = document.getElementById('text');
-        
-        // Miganie
-        let blinkCount = 4;
-
-        function getRandomDuration() {
-        return parseFloat((Math.random() * (0.3 - 0.1) + 0.1).toFixed(1)); // Losuje czas trwania między 0.1s a 0.3s
-    }
-
-    // Funkcja migania
-    function fastBlink() {
-        if (blinkCount > 0) {
-            const duration = getRandomDuration(); // Losuj nowy czas trwania
-            textElement.style.animation = `blink ${duration}s`;
-            textElement.style.opacity = '0';
-
-            // Po zakończeniu mignięcia uruchom ponownie z losowym czasem
-            setTimeout(() => {
-                blinkCount--; // Zmniejsz licznik mignięć
-                fastBlink(); // Ponownie wywołaj funkcję
-            }, duration * 1000); // Czekaj na zakończenie aktualnego mignięcia
-        } else {
-            stopBlink(); // Zatrzymaj miganie po 4 mignięciach
-        }
-    }
-
-    // Funkcja zatrzymująca miganie i "zapalenie" tekstu
-    function stopBlink() {
-        textElement.style.animation = 'none'; // Zatrzymaj animację
-        textElement.style.color = '#ffe286'; // Zmień kolor na jasny
-        textElement.style.textShadow = '0 0 30px rgba(255,237,179, 0.8)'; // Dodaj cień
-        textElement.style.opacity = '1'; // Upewnij się, że tekst jest widoczny
-    }
-
-    // Rozpocznij miganie
-    fastBlink(); // Rozpocznij pierwsze mignięcie
-};
-
 </script>
 
 
 
 <style> 
-    /* COLORS
+    /* COLORS PALETTE
 
     24271C
     4C3721
@@ -215,14 +177,19 @@ const scrollable = document.getElementById('scrollable');
             font-size: clamp(3rem, 4vw, 4rem);
             font-weight: bold;
             opacity: 1; 
+            color: #ffe286;
             transition: text-shadow 0.5s ease;
     }
 
     @keyframes blink {
         0%, 100% {
             opacity: 1; /* Włączony tekst */
-            text-shadow: 0 0 50px rgba(255,237,179, 0.8);
-            color: #ffe286;
+            text-shadow: 
+            -1px -1px 0 #ffe286  
+            1px -1px 0 #ffe286,
+            -1px  1px 0 #ffe286,
+            1px  1px 0 #ffe286,
+            0 0 10px rgba(255,237,179, 0.8);
         }
         50% {
             opacity: 0; /* Migotanie */
@@ -238,100 +205,80 @@ const scrollable = document.getElementById('scrollable');
     .main{
         height: 100vh;
         width: 100vw;
-        background-color: #4A5956 /*#1B1B1B*/;
-        /*background: radial-gradient(circle,rgba(36, 39, 28, 0.8), rgba(0, 0, 0, 1)), url('bg.jpg');
-        background-size: cover;
-        background-position: center;*/
-    }
-    
-    .main-left{
-        float: left;
-        height: 100vh; 
-        width: 60%;
-        z-index: 2;
-    }
-
-    .main-left-top{
-        height: 20%;
-    }
-
-    .main-left-top h1{
-        font-size: 2rem;
-        margin-left: 20px;
-        color: #DCEED1;
-        font-weight: 300;
-    }
-
-    .main-left-middle{
-        height: 40%;
-        justify-items: center;
-        text-align: center;
-    }
-    .main-left-middle h3{
-        margin: 20px auto;
-        color: #DCEED1;
-        padding: 0;
-        text-align: center;
-        font-size: 80px;
-    }
-
-    .main-left-bottom{
-        justify-items: center;
-        text-align: center;
-        margin: -60px auto;
-        height: 40%;
-    }
-
-    .main-right{
         display: flex;
-        float: left;
-        height: 100vh;
-        width: 40%;
-        align-items: center;
-        text-align: center;
-        justify-items: center;
-        z-index: 2;
+        flex-direction: column;
+        background-color: #C4B59E;
     }
 
-    .main-right-center{
+    .main-top{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        height: 80%;
-        width: 80%;
+        align-items: center;
+        height: 35%;
+        background-color:  #3B8A57;
+        color: #C4B59E;
+    }
+
+    .main-top h1{
+        margin: 10px;
+        padding: 0 auto;
+        font-size: 2rem;
+    }
+
+    .oi{
+        font-family: "Oi", serif;
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    .main-top h2{
+        line-height: 1;
+        margin: 20px auto;
+        color: #C4B59E;
+        padding: 0;
         text-align: center;
-        margin: 0px auto;
-        padding: 0px auto;
+        font-size: clamp(3.2rem,6vw,6rem);
+    }
+    .main-checkered{
+        width: 100%;
+        height: 10%;
+        display: grid;
+        grid-template-columns: repeat(41, 50px);
+        grid-template-rows: repeat(2, 50px);
+    }
+    .main-checkered div {
+        width: 50px;
+        height: 50px;
+        background-color: #3B8A57;
     }
     
-    .main-right-img{
-        border-radius: 20px;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        box-shadow: 0px 0px 20px #010000;
-        background-image: url(code.jpg);
-        background-size: cover;
-        background-position: center;
+    .main-checkered div:nth-child(2n+1) {
+        background-color: #C4B59E;
+    }
+
+    .main-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 55%;
     }
 
     .vertical-menu {
-        max-width: 60%; 
+        line-height: 1.2;
         list-style-type: none; 
-        padding: 0; 
-        margin: 0 auto;
+        text-align: center;
     }
 
     .vertical-menu li {
-        padding: 10px; 
-        margin-bottom: 10px; 
         font-size: clamp(3rem, 4vw, 4rem);
-        font-weight: 1000;
+        font-weight: 200;
         text-align: center; 
     }
     .vertical-menu li a {
         text-decoration: none;
-        color: #C3D7BE; 
+        color: #3B8A57; 
         display: block;
     }
     
@@ -344,19 +291,30 @@ const scrollable = document.getElementById('scrollable');
     .projects{
         height: 100vh;
         width: 100vw;
-        background-color: #BB966A;
+        background-color: #9A754E;
     }
 
     .projects-top{
         height: 20vh;
         width: 100vw;
-        border:2px solid#8D4918;
+        border: 2px solid#8D4918;
     }
 
     .about{
         height: 100vh;
         width: 100vw;
-        background-color: green;
+        background-color: #BB966A;
+    }
+
+    .about h2{
+        font-size: clamp(3.5rem, 4vw, 4.5rem);
+        font-weight: 900;
+        color: #C4B59E;
+        text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
     }
 
     .contact{
@@ -403,7 +361,7 @@ const scrollable = document.getElementById('scrollable');
 
     .floating-text {
         font-size: clamp(2.5rem, 4vw, 3.5rem);
-        font-weight: bold;
+        font-weight: 200;
         color: #C4B59E;
         line-height: 1;
     }
