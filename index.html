@@ -13,10 +13,10 @@
 <body>
     <div id="scrollable">
     <div class="content">
-        <div class="main">
+        <div class="main" id="main">
                 <div class="main-top">
+                    <h2 class="oi">Full Stack<br>Developer</h2>
                     <h1>Mateusz Karoń</h1>
-                    <h2 class="oi">FullStack<br>Developer</h2>
                 </div>
                 <div class="main-checkered"  id="checkerboard">
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
@@ -38,51 +38,72 @@
         </div>
 
         <div id="projects" class="projects">
+            <div class="projects-main">
+                <div class="projects-top">
+                    <h2 class="oi">My Projects</h2>
+                </div>
+                <div class="projects-middle">
 
-            <div class="project-top">
-                <h2>My Projects</h2>
-            </div>
-            <div class="project-middle">
+                </div>
 
+                <div class="projects-bottom">
+                    <div class="pb-left"><h2 class="oi"><a href="https://sklep.cavalcare.pl" target="_blank">PROJECT 1</a></h2></div>
+                    <div class="pb-mid"><h2 class="oi"><a href="" target="_blank">PROJECT 2</a></h2></div>
+                    <div class="pb-left"><h2 class="oi"><a href="" target="_blank">PROJECT 3</a></h2></div> 
+                </div>
             </div>
-
-            <div class="project-bottom">
-        
+            <div class="footer">
+                <h3 style="float: left;margin: 0 20px 20px 20px;"><a href="#main" class="icon"><i class="fa-solid fa-angle-left"></i> </a></h3>
+                <p style="float: center; "> Copyright © Mateusz Karoń 2024.</p>
+                <h3 style="float: right;margin: 0 20px 20px 20px;"><a href="#about" class="icon"><i class="fa-solid fa-angle-right"></i> </a></h3>
             </div>
-        
         </div>
 
         <div id="about" class="about">
-            <h2>About me</h2>
-
+            <div class="about-main">
+                <h2 class="oi" style="font-weight: 200;">About me</h2>
+            </div>
+            <div class="footer">
+                <h3 style="float: left;margin: 0 20px 20px 20px;"><a href="#projects" class="icon"><i class="fa-solid fa-angle-left"></i> </a></h3>
+                <p style="float: center; "> Copyright © Mateusz Karoń 2024.</p>
+                <h3 style="float: right;margin: 0 20px 20px 20px;"><a href="#contact" class="icon"><i class="fa-solid fa-angle-right"></i> </a></h3>
+            </div>
         </div>
 
         <div id="contact" class="contact">
-            <h2 class="floating-text oi">
-                <span class="char1">C</span>
-                <span class="char2">O</span>
-                <span class="char3">N</span>
-                <span class="char4">T</span>
-                <span class="char5">A</span>
-                <span class="char6">C</span>
-                <span class="char7">T</span>
-                <span class="char8">&nbsp</span>
-                <span class="char9">M</span>
-                <span class="char10">E</span>
-            </h2>
-            <h3> <i class="fas fa-envelope"></i> EMAIL <br> mateuszkaron96@gmail.com </h3>
-            <h3> <i class="fas fa-phone"></i> PHONE NUMBER <br> +48 692456762 </h3>
-            <h3>
-                <a href="https://github.com/mateuszkaron" target="_blank" class="icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://instagram.com/masnymat" target="_blank" class="icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/numb79620134" target="_blank" class="icon">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-            </h3>
+            <div class="contact-main">
+                <h2 class="floating-text oi">
+                    <span class="char1">C</span>
+                    <span class="char2">O</span>
+                    <span class="char3">N</span>
+                    <span class="char4">T</span>
+                    <span class="char5">A</span>
+                    <span class="char6">C</span>
+                    <span class="char7">T</span>
+                    <span class="char8">&nbsp</span>
+                    <span class="char9">M</span>
+                    <span class="char10">E</span>
+                </h2>
+                <h3> 
+                    <i class="fas fa-envelope"></i> EMAIL <br> mateuszkaron96@gmail.com <br>
+                    <i class="fas fa-phone"></i> PHONE NUMBER <br> +48 692456762 <br><br>
+                
+                    <a href="https://github.com/mateuszkaron" class="icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/masnymat" class="icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/numb79620134" class="icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </h3>
+            </div>
+            <div class="footer">
+                <h3 style="float: left; margin: 0 20px 20px 20px;"><a href="#about" class="icon"><i class="fa-solid fa-angle-left"></i> </a></h3>
+                <p style="float: center; text-align: center; justify-content: center;"> Copyright © Mateusz Karoń 2024.</p>
+                <h3 style="float: right;margin: 0 20px 20px 20px;"><a href="#main" class="icon"><i class="fa-solid fa-angles-right"></i> </a></h3>
+            </div>
         </div>
     </div> 
 </div> 
@@ -157,7 +178,6 @@ const scrollable = document.getElementById('scrollable');
         padding: 0px;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-
         overflow-y: hidden;
         overflow-x: scroll;
 
@@ -204,26 +224,204 @@ const scrollable = document.getElementById('scrollable');
 
     .main{
         height: 100vh;
+        overflow: hidden;
         width: 100vw;
         display: flex;
         flex-direction: column;
         background-color: #C4B59E;
     }
 
-    .main-top{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 35%;
-        background-color:  #3B8A57;
-        color: #C4B59E;
+        .main-top{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 35%;
+            background-color:  #3B8A57;
+            color: #C4B59E;
+        }
+
+        .main-top h1{
+            margin: 10px;
+            padding: 0 auto;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .main-top h2{
+            line-height: 1;
+            margin: 20px auto;
+            color: #C4B59E;
+            padding: 0;
+            text-align: center;
+            font-size: clamp(3.2rem,6vw,6rem);
+        }
+        .main-checkered{
+            width: 100%;
+            height: 10%;
+            display: grid;
+            grid-template-columns: repeat(41, 50px);
+            grid-template-rows: repeat(2, 50px);
+        }
+        .main-checkered div {
+            width: 50px;
+            height: 50px;
+            background-color: #3B8A57;
+        }
+        
+        .main-checkered div:nth-child(2n+1) {
+            background-color: #C4B59E;
+        }
+
+        .main-bottom{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 55%;
+        }
+
+    .vertical-menu {
+        line-height: 1.2;
+        list-style-type: none; 
+        text-align: center;
     }
 
-    .main-top h1{
-        margin: 10px;
-        padding: 0 auto;
-        font-size: 2rem;
+        .vertical-menu li {
+            font-size: clamp(3rem, 4vw, 4rem);
+            font-weight: 200;
+            text-align: center; 
+        }
+        .vertical-menu li a {
+            text-decoration: none;
+            color: #3B8A57; 
+            display: block;
+        }
+        
+        .vertical-menu li a:hover {
+            text-shadow: 0 0 50px rgba(255,237,179, 0.8);
+            color: #ffe286;
+            transition: text-shadow 0.5s ease;
+        }
+
+    .projects{
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+        padding: auto;
+        background-color: #C4B59E;
+    }   
+        .projects h2{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(2.5rem, 4vw, 4.5rem);
+            color: #C4B59E;
+            text-shadow: 
+            -2px -2px 0 #000,  
+            2px -2px 0 #000,
+            -2px  2px 0 #000,
+            2px  2px 0 #000;
+        }
+
+        .projects-main{
+            height: 90%;
+            width: 100%;
+            margin: auto;
+        }
+        .projects-top{
+            height: 25%;
+            width: 100%;
+        }
+        .projects-middle{
+            height: 55%;
+            width: 100%;
+        }
+
+        .projects-bottom{
+            height: 20%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+        }
+        
+        .projects-bottom div {
+            border: 2px solid#8D4918;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+    .horizontal-menu{
+        line-height: 1.2;
+        list-style-type: none; 
+        text-align: center;
+    }
+    
+    
+    .about{
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+        background-color: #C4B59E;
+    }
+        .about-main{
+            height: 90%;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-main h2{
+            font-size: clamp(3.5rem, 4vw, 4.5rem);
+            font-weight: 900;
+            color: #C4B59E;
+            text-shadow: 
+            -2px -2px 0 #000,  
+            2px -2px 0 #000,
+            -2px  2px 0 #000,
+            2px  2px 0 #000;
+        }
+    .contact{
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+        background-color: #C4B59E;
+    }
+        .contact-main{
+            height: 90%;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact h3{
+            margin: 10px;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            text-align: center;
+            font-weight: bold;
+            color: #3b3b3b;
+        }
+
+    .footer{
+        height: 10%;
+        width: 100%; 
+        padding: auto;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
     }
 
     .oi{
@@ -232,107 +430,8 @@ const scrollable = document.getElementById('scrollable');
         font-style: normal;
     }
 
-    .main-top h2{
-        line-height: 1;
-        margin: 20px auto;
-        color: #C4B59E;
-        padding: 0;
-        text-align: center;
-        font-size: clamp(3.2rem,6vw,6rem);
-    }
-    .main-checkered{
-        width: 100%;
-        height: 10%;
-        display: grid;
-        grid-template-columns: repeat(41, 50px);
-        grid-template-rows: repeat(2, 50px);
-    }
-    .main-checkered div {
-        width: 50px;
-        height: 50px;
-        background-color: #3B8A57;
-    }
-    
-    .main-checkered div:nth-child(2n+1) {
-        background-color: #C4B59E;
-    }
-
-    .main-bottom{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 55%;
-    }
-
-    .vertical-menu {
-        line-height: 1.2;
-        list-style-type: none; 
-        text-align: center;
-    }
-
-    .vertical-menu li {
-        font-size: clamp(3rem, 4vw, 4rem);
-        font-weight: 200;
-        text-align: center; 
-    }
-    .vertical-menu li a {
+    a {
         text-decoration: none;
-        color: #3B8A57; 
-        display: block;
-    }
-    
-    .vertical-menu li a:hover {
-        text-shadow: 0 0 50px rgba(255,237,179, 0.8);
-        color: #ffe286;
-        transition: text-shadow 0.5s ease;
-    }
-
-    .projects{
-        height: 100vh;
-        width: 100vw;
-        background-color: #9A754E;
-    }
-
-    .projects-top{
-        height: 20vh;
-        width: 100vw;
-        border: 2px solid#8D4918;
-    }
-
-    .about{
-        height: 100vh;
-        width: 100vw;
-        background-color: #BB966A;
-    }
-
-    .about h2{
-        font-size: clamp(3.5rem, 4vw, 4.5rem);
-        font-weight: 900;
-        color: #C4B59E;
-        text-shadow: 
-        -2px -2px 0 #000,  
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000;
-    }
-
-    .contact{
-        height: 100vh;
-        width: 100vw;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #C4B59E;
-    }
-
-    .contact h3{
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        text-align: center;
-        font-weight: bold;
-        color: #3b3b3b;
     }
 
     .icon {
@@ -360,7 +459,7 @@ const scrollable = document.getElementById('scrollable');
     }
 
     .floating-text {
-        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-size: clamp(2rem, 4vw, 3.5rem);
         font-weight: 200;
         color: #C4B59E;
         line-height: 1;
@@ -436,6 +535,17 @@ const scrollable = document.getElementById('scrollable');
     }
     .main-left-middle h3{
         font-size: 58px;
+    }
+    .projects-top{
+        height: 10%;
+    }
+    .projects-middle{
+        height:45%;
+    }
+    .projects-bottom{
+        height: 45%;
+        display: flex;
+        flex-direction: column;
     }
     }
 </style>
