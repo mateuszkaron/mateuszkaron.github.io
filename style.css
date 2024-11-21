@@ -21,6 +21,7 @@
   
   .about {
     width: 30%;
+    height: 100vh;
     background-color: #C4B59E;
     color: white;
     display: flex;
