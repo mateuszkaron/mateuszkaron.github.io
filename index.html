@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="gG-SwwZ7V9KZpZfOuNWLzhcF8pw9lSKPfMzFjBnBMZ0" />
-  <title>Portfolio</title>
+  <title>Mateusz Karoń | IT</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Oi&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
+  <article class="container">
     <section class="about">
         <div class="about-content">
             <h1 class="floating-text oi">
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="Experience" id="Experience">
-            <h2 class="floating-text oi">
+            <!-- <h2 class="floating-text oi">
                 <span class="char1">E</span>
                 <span class="char2">X</span>
                 <span class="char3">P</span>
@@ -100,8 +100,41 @@
                 <span class="char8">N</span>
                 <span class="char9">C</span>
                 <span class="char10">E</span>
-            </h2>
-            <h4 class="workingOn">Working on it ....</h4>
+            </h2> -->      
+            <div class="exp-item exp-first">
+                <div class="exp-header">
+                    <h3 class="exp-title">PROFESSIONAL EXPERIENCE</h2>
+                    <button class="exp-toggle">
+                        <span class="exp-icon">&#43;</span>
+                    </button>
+                </div>
+                <div class="exp-content">
+                    <h3 class="grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+                </div>
+            </div>
+            <div class="exp-item exp-rest">
+                <div class="exp-header">
+                    <h3 class="exp-title">EDUCATION</h2>
+                    <button class="exp-toggle">
+                        <span class="exp-icon exp-rest">&#43;</span>
+                    </button>
+                </div>
+                <div class="exp-content">
+                    <h3 class="grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+                </div>
+            </div>
+      
+            <div class="exp-item exp-rest">
+                <div class="exp-header">
+                    <h3 class="exp-title">COURSES</h2>
+                    <button class="exp-toggle">
+                        <span class="exp-icon exp-rest">&#43;</span>
+                    </button>
+                </div>
+                <div class="exp-content">
+                    <h3 class="grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+                </div>
+            </div>
         </div>
         <div class="Skills" id="Skills">
             <h2 class="floating-text oi">
@@ -139,6 +172,15 @@
             <p class="oi" style="float: center; text-align: left; justify-content: center;">2024</p>
         </div>
     </section>
-  </div>
+  </article>
 </body>
 </html>
+
+<script>
+    document.querySelectorAll('.exp-header, .exp-toggle').forEach(item => {
+    item.addEventListener('click', () => {
+        const parentItem = item.closest('.exp-item'); 
+        parentItem.classList.toggle('active');
+    });
+    });
+</script>
