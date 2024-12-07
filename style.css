@@ -272,7 +272,7 @@
   }
 
   .exp-icon{
-    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-size: clamp(3rem, 4vw, 3.8rem);
     color: transparent;
     color: var(--experience-color);
     font-weight: bold;
