@@ -296,6 +296,23 @@
     transition: max-height 0.5s ease, opacity 0.3s ease;
   }
 
+  .exp-content li{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #222222;
+    list-style-type: disc;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .exp-content-title li{
+    margin-top: 5px;
+    color: #222222;
+    list-style-type: circle;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
   .exp-item.active .exp-content {
     max-height: 500px;
     opacity: 1;
