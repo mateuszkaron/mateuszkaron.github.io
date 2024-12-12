@@ -242,7 +242,7 @@
 </html>
 
 <script>
-    document.querySelectorAll('.exp-header, .exp-toggle').forEach(item => {
+    document.querySelectorAll('.exp-header').forEach(item => {
     item.addEventListener('click', () => {
         const parentItem = item.closest('.exp-item'); 
         parentItem.classList.toggle('active');
