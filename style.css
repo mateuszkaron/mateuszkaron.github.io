@@ -286,7 +286,7 @@
     transition: transform 0.5s ease, text-shadow 0.3s ease;
   }
 
-  .exp-content{
+    .exp-content{
     display: block;
     padding: 15px;
     border-radius: 0 0 5px 5px;
@@ -301,7 +301,7 @@
     margin-left: 20px;
     color: #222222;
     list-style-type: disc;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 4vw, 1.6rem);
     font-weight: 600;
   }
 
@@ -309,10 +309,10 @@
     margin-top: 5px;
     color: #222222;
     list-style-type: circle;
-    font-size: 1.2rem;
+    font-size: clamp(0.7rem, 4vw, 1.2rem);
     font-weight: 300;
   }
-  
+
   .year{
     margin-left: 40px;
     font-size: 1rem;
@@ -322,11 +322,11 @@
   .place{
     margin-left: 40px;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 4vw, 1.4rem);
   }
 
   .exp-item.active .exp-content {
-    max-height: 500px;
+    max-height: 1000px;
     opacity: 1;
   }
 
@@ -394,6 +394,10 @@
 .grey{
   text-decoration: none;
   color: #3b3b3b;
+}
+
+.mail{
+  font-size: clamp(0.2rem, 4vw, 1.4rem) !important;
 }
 
 .title{
