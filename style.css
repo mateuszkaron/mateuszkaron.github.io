@@ -328,7 +328,7 @@
   }
 
   .exp-item.active .exp-content {
-    max-height: 2000px;
+    max-height: 1000vh;
     opacity: 1;
   }
 
