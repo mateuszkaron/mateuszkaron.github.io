@@ -253,9 +253,11 @@
     -2px 2px 0 #3b3b3b, 
     2px 2px 0 #3b3b3b, 
     -1px 1px #3b3b3b;
+    transition: color 0.4s;
   }
 
   .exp-title:hover{
+    color: var(--experience-color);
     text-shadow: 
     -2px -2px 0 var(--contact-color) , 
     2px -2px 0 var(--contact-color) , 
@@ -286,7 +288,7 @@
     transition: transform 0.5s ease, text-shadow 0.3s ease;
   }
 
-    .exp-content{
+  .exp-content{
     display: block;
     padding: 15px;
     border-radius: 0 0 5px 5px;
@@ -333,6 +335,7 @@
   .exp-item.active .exp-toggle .exp-icon {
     transform: rotate(45deg);
   }
+
 
   .Skills{
     background-color: var(--primary-color);
