@@ -15,7 +15,7 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     </head>
-    
+
     <body>
         <div class="container">
             
@@ -56,7 +56,7 @@
                     </p>
                 </div>
                 <div class="about-footer">
-                    <img src="code.jpg" alt="Photo of myself" class="profile-photo">
+                    <img src="code.jpg" alt="A photo of Mateusz Karoń working on code" class="profile-photo">
                     <h4 class="oi">More about me:</h4>
                     <div class="buttons">
                         <a href="https://instagram.com/masnymat" class="icon">
@@ -74,7 +74,7 @@
 
             <!-- Sekcja przewijalna -->
             <section class="content">
-                <nav class="content-menu">
+                <nav class="content-menu" aria-label="Main Navigation">
                     <a href="#Projects" class="menu-item">Projects</a>
                     <a href="#Experience" class="menu-item">Experience</a>
                     <a href="#Skills" class="menu-item">Skills</a>
@@ -94,7 +94,53 @@
                             <span class="char8">S</span>
                         </h2>
                         <div class="project">
-                            <h4 class="workingOn">Working on it ....</h4>
+                            <article class="project-showcase">
+                                <!-- Showcase Photo -->
+                                <div class="showcase-photo" style="background-image: url('Photos/OnlineShop.png');"></div>
+                                
+                                <!-- Showcase Content -->
+                                <div class="showcase-content">
+                                    <div>
+                                        <p class="showcase-text">FULLSTACK DEVELOPER</p>
+                                        <h3 class="oi" style="font-size: clamp(1.5rem, 4vw, 2rem); margin: 0;">Online Store</h3>
+                                        <p class="showcase-text">
+                                            This project is e-commerce website built with modern web technologies.
+                                            It includes features such as user authentication, product catalog, and shopping cart functionality.
+                                            I made some custom widgets and more user-friendly things.
+                                        </p>
+                                    </div>
+                                    <div style="margin-top: 30px;">
+                                        <a href="https://sklep.cavalcare.pl" target="_blank" class="showcase-button" >
+                                            See More
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-showcase">
+                                <!-- Showcase Photo -->
+                                <div class="showcase-photo" style="background-image: url('Photos/CrossyRoad.jpg');"> </div>
+                                
+                                <!-- Showcase Content -->
+                                <div class="showcase-content">
+                                    <div>
+                                        <p class="showcase-text">C++ DEVELOPER</p>
+                                        <h3 class="oi" style="font-size: clamp(1.5rem, 4vw, 2rem); margin: 0;">Console Game</h3>
+                                        <p class="showcase-text">
+                                            It's 'Crossy Road' like game made in C++.
+                                            The game is about a rabbit who has to run across the street and collect carrots, 
+                                            but be careful, there are cars driving by!
+
+                                        </p>
+                                    </div>
+                                    <div style="margin-top: 30px;">
+                                        <a href="https://github.com/mateuszkaron/GAME-CrossyRoadLike?tab=readme-ov-file" target="_blank" class="showcase-button" >
+                                            See More
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
                         </div>
                     </section>
 
